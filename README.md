@@ -1,80 +1,70 @@
-# Unit Converter APP
+# Getting Started with Create React App
 
-Have you ever tried creating your own unit converter? Yes, an app with which you can instantly transform units. Weight,
-temperature, time, length, power, currency... And many more!
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-When we think of these apps, the typical conversion app comes to mind: from Euros to Dollars, from degrees Celsius to
-Fahrenheit, from Kilometers to Miles... But we can also make more complex transformations between various measurement
-systems.
+## Available Scripts
 
-The goal of this challenge is that you can create your own app to convert units. You’ll decide the level of difficulty
-and complexity, your imagination will be the limit!
+In the project directory, you can run:
 
-![Brais Moure Challenge card](./.github/assets/mouredev_unit_converter.png)
-> This is a challenge created by [MoureDev](https://www.twitch.tv/mouredev). He will review and give feedback to some
-> proposed solutions from the community in one of his Twitch livestreams 😻
+### `npm start`
 
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
----
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-## What you'll create
+### `npm test`
 
-### General level:
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-- This test is designed for all levels. You can create something very simple (i.e. an app that transforms
-  units in a system), or something more fancy like an application that transforms between systems and that is not
-  only focused on one type of unit.
-- Different types of units have been mentioned, but you decide what to make the project about (it can be about units
-  that have not been mentioned, there are infinite...). The decision is yours!
-- Conversions must be able to be done in any direction, that is, if the project supports meters, decimeters, centimeters
-  and millimeters, the app must cover all possible combinations of conversion.
-- The use of the app should be as simple as possible. This is the real challenge of this exercise, if I want to do a
-  transformation it has to be something very fast and easy!
+### `npm run build`
 
-### Screens
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-- If your app allows to transform many types of units, it must have a selection screen and a detail screen with the
-  converter.
-- If you decide that your application only supports one family of units, it can be all in one screen.
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-> I remind you that you should work on making sure that to achieve a result you have to make the fewest number of
-> clicks.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### Extra points
+### `npm run eject`
 
-Do you dare to use other types of less common units of measurement? Apart from the typical units, there are many others
-that we could include in our app. From soccer fields to kilometers converter, or a beard/seconds converter. Don't put
-that face, it exists. 
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-You have the freedom of creativity, let's see what you can surprise us with!
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-## Technical requirements
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-* Create a **clean**, **maintainable** and **well-designed** code. We expect to see a good and clear architecture that
-  allows to add or modify the solution without so much troubles.
-* **Test** your code until you are comfortable with it. We don't expect a 100% of Code Coverage but some tests that
-  helps to have a more stable and confident base code.
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-To understand how you take decisions during the implementation, **please write a COMMENTS.md** file explaining some of
-the most important parts of the application. You would also be able to defend your code through
-[Rviewer](https://rviewer.io), once you submit your solution.
+## Learn More
 
----
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-## How to submit your solution
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-* Push your code to the `devel` branch - we encourage you to commit regularly to show your thinking process was.
-* **Create a new Pull Request** to `main` branch & **merge it**.
+### Code Splitting
 
-Once merged you **won't be able to change or add** anything to your solution, so double-check that everything is as you
-expected!
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-Remember that **there is no countdown**, so take your time and implement a solution that you are proud!
+### Analyzing the Bundle Size
 
---- 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-<p align="center">
-  If you have any feedback or problem, <a href="mailto:help@rviewer.io">let us know!</a> 🤘
-  <br><br>
-  Made with ❤️ by <a href="https://rviewer.io">Rviewer</a>
-</p>
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
