@@ -1,0 +1,12 @@
+.nav {
+    background-color: $color-primary-faded;
+
+    display: flex;
+};
+
+.bt_Nav {
+    background-color: $color-secondary;
+    color: white;
+
+    justify-content: space-around;
+}
