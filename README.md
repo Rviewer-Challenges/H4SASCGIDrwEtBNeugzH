@@ -1,6 +1,6 @@
 # Deployed at:
 
-https://6336cce39ddd71047038d099--dashing-macaron-2e2a80.netlify.app
+https://dashing-macaron-2e2a80.netlify.app/
 
 # Getting Started with Create React App
 

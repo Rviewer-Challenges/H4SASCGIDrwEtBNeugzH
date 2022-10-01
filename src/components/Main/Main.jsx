@@ -1,13 +1,15 @@
-import React, { Component } from "react";
+import React from "react";
+import termometro from '../../images/termometro.png';
 
-class Main extends Component {
-  render() {
-    return (
-      <div className="main">
-        Main
+function Main () {
+  return (
+    <div className="main">
+      <p>CONVERTER</p>
+      <div className="icono">
+        <img src={termometro} alt="temperatura" id="termometro"/>
       </div>
-    )
-  }
+    </div>
+  )
 }
 
 export default Main;
