@@ -1,0 +1,15 @@
+.temperatura {
+    & button {
+        max-width: 20%;
+        height: auto;
+    };
+    & #intercambio {
+        max-width: 20%;
+        height: auto;
+    }
+}
+
+.intercambio {
+    max-width: 20%;
+    height: auto;
+}
