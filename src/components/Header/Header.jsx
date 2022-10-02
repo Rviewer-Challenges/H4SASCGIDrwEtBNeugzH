@@ -5,21 +5,22 @@ import logo from '../../logo.svg';
 
 function Header () {
   return (
-    <div className="header">
+    <header className="header">
+      <img src={logo} className="App-logo" alt="logo" />
       <img src={logo} className="App-logo" alt="logo" />
             <p>
-              Edit <code>src/App.js</code> and save to reload.
+              Under construction
             </p>
             <a
               className="App-link"
-              href="https://reactjs.org"
+              href="https://github.com/Gaizka79/converter.git"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Learn React
+              Git Hub Project
             </a>
       <Nav/>
-    </div>
+    </header>
   ) 
      
   

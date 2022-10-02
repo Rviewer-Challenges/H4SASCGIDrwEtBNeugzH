@@ -1,13 +1,29 @@
-import React, { Component } from "react";
+import React from "react";
+import { Routes, Route } from 'react-router-dom';
 
-class Main extends Component {
-  render() {
-    return (
-      <div className="main">
-        Main
-      </div>
-    )
-  }
+import Home from './Home/Home';
+import Temperatura from './Temperatura/Temperatura';
+import Exchange from './Exchange/Exchange';
+import Peso from './Peso/Peso';
+import Velocidad from './Velocidad/Velocidad';
+import Distancia from './Distancia/Distancia';
+import Volumen from './Volumen/Volumen';
+
+function Main () {
+  return (
+    <main className="main">
+      <Routes>
+        <Route element={<Home/>} path='/'/>
+        <Route element={<Temperatura/>} path='/Temperatura/'/>
+        <Route element={<Exchange/>} path='/Exchange'/>
+        <Route element={<Peso/>} path='/Peso'/>
+        <Route element={<Velocidad/>} path='/Velocidad'/>
+        <Route element={<Distancia/>} path='/Distancia'/>
+        <Route element={<Volumen/>} path='/Volumen'/>
+      </Routes>
+    </main>
+  )
+
 }
 
 export default Main;

@@ -3,9 +3,9 @@ import React from "react";
 function Footer () {
   
   return (
-    <div className="footer">
-      Footer
-    </div>
+    <footer className="footer">
+      Unit converter
+    </footer>
   )
   
 }
