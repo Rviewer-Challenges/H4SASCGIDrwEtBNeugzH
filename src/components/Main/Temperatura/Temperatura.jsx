@@ -20,7 +20,6 @@ function Temperatura () {
           case "C": // A Celsius
             return temperatura;
           case "F": // A Fahrenheit
-            console.log("aki estamos")
             console.log(temperatura * 1.8 +32)
             return (temperatura * 1.8 + 32)
           case "K": // A Kelvin
@@ -81,7 +80,7 @@ function Temperatura () {
   };
 
   return (
-    <div className="temperatura">
+    <div className="marcoPrincipal">
       <p>Temperatura</p> 
       <div className="camposdecambio">
         <input defaultValue={input} type="text" className="convertir" onChange={(e) => debounced(e)} name="convertir1" id="convertir1" />
@@ -91,20 +90,24 @@ function Temperatura () {
 
       <div className="unidades">
 
-        <label htmlFor="desde">Desde:</label>
-        <select name="desde" id="desde" onChange={(e) => handleChangeDesde(e)}>
+        <label htmlFor="desde" className="label">Desde:</label>
+        <select className="select" name="desde" id="desde" onChange={(e) => handleChangeDesde(e)}>
           <option value="C">Celsius</option>
           <option value="F">Fahrenheit</option>
           <option value="K">Kelvin</option> 
         </select>
 
-        <label htmlFor="hasta">Hasta:</label>
-        <select name="hasta" id="hasta" onChange={(e) => handleChangeHasta(e)}>
+        <label htmlFor="hasta" className="label">Hasta:</label>
+        <select className="select" name="hasta" id="hasta" onChange={(e) => handleChangeHasta(e)}>
           <option value="F">Fahrenheit</option>
           <option value="C">Celsius</option>
           <option value="K">Kelvin</option>
         </select>
       </div>
+      <div className="etiquetascambio">
+                <p>{desde !=="0" ?  desde:""}</p>
+                <p>{hasta !=="0" ?  hasta:""}</p>
+            </div>
     </div>
   )
   
