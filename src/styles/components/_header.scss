@@ -38,7 +38,16 @@
   }
   /**********************************************/
 
-  .header {
-    background-color: $color-primary;
-    color: white;
+.header {
+  background-color: $color-primary;
+  color: white;
+
+  & .title {
+    margin-top: 0%;
+    font-size:larger;
   }
+}
+
+
+/* <img src={logo} className="App-logo" alt="logo" />
+      <img src={logo} className="App-logo" alt="logo" /> */

@@ -4,10 +4,13 @@ import { Link } from 'react-router-dom';
 function Nav () {
   return(
     <nav className="nav">
-      <Link className="bt_Nav" id="bt_moneda">Moneda</Link>
-      <button className="bt_Nav" id="bt_distancia">Distancia</button>
-      <button className="bt_Nav" id="bt_fluidos">Fluidos</button>
-      <button className="bt_Nav" id="bt_masas">Masas</button>
+      <Link to="/"><button type="button" className="bt_Nav">Home</button></Link>
+      <Link to="/Temperatura"><button type="button" className="bt_Nav">Temperatura</button></Link>
+      <Link to="/Exchange"><button type="button" className="bt_Nav">Exchange</button></Link>
+      <Link to="/Peso"><button type="button" className="bt_Nav">Peso</button></Link>
+      <Link to="/Velocidad"><button type="button" className="bt_Nav">Velocidad</button></Link>
+      <Link to="/Distancia"><button type="button" className="bt_Nav">Distancia</button></Link>
+      <Link to="/Volumen"><button type="button" className="bt_Nav">Volumen</button></Link>
     </nav>
   )
 }
