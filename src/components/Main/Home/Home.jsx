@@ -13,30 +13,16 @@ function Home () {
   return (
     <div className="home">
       <p className="selecciona">SELECCIONA EL CAMPO A CONVERTIR</p>
-      {/* <div className="campos">
-        <p>PRUEBA DE CAMPOS</p> */}
-        <div className="iconos">
-          <Link /* img={temperatura} */ className="boton" to='/Temperatura'><img src={temperatura} alt="temperatura" id="temperatura"/></Link>
-          <Link to='/Exchange' img={exchange} className="boton"><img src={exchange} alt="exchange" id="exchange"/></Link>
-          <Link to='/Peso' img={peso} className="boton"><img src={peso} alt="peso" id="peso"/></Link>
-          <Link to='/Velocidad' img={velocidad} className="boton"><img src={velocidad} alt="velocidad" id="velocidad"/></Link>
-          <Link to='/Distancia' img={distancia} className="boton"><img src={distancia} alt="distancia" id="distancia"/></Link>
-          <Link to='/Volumen' img={volumen} className="boton"><img src={volumen} alt="volumen" id="volumen"/></Link>
-        </div>
-      {/* </div> */}
-      {/* <div className="converterArea">
-        <p>UNIT CONVERTER</p>
-        <div className="from">
-          <label htmlFor="desde">Desde: </label><input type="text" name="desde"/> <input type="number" />
-        </div>
-        <div className="to">
-          Resultado:
-        </div>
-
-      </div> */}
+      <div className="iconos">
+        <Link to='/Temperatura' className="boton"><img src={temperatura} alt="temperatura"/></Link>
+        <Link to='/Exchange' className="boton"><img src={exchange} alt="exchange"/></Link>
+        <Link to='/Peso' className="boton"><img src={peso} alt="peso"/></Link>
+        <Link to='/Velocidad' className="boton"><img src={velocidad} alt="velocidad"/></Link>
+        <Link to='/Distancia' className="boton"><img src={distancia} alt="distancia"/></Link>
+        <Link to='/Volumen' className="boton"><img src={volumen} alt="volumen"/></Link>
+      </div>
     </div>
   )
-
 }
 
 export default Home;

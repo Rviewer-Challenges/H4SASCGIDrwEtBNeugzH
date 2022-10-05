@@ -130,8 +130,8 @@ function Peso () {
 
     return (
         <div className="marcoPrincipal">
-            <p>Peso</p>  
-            <div className="desde">
+            <p className="campo">Peso</p>  
+            <div className="select">
                 <label htmlFor="desde" className="label">Desde:</label>
                 <select className="select" value={desde} onChange={handleSelectDesde}>
                     {options.map(option => (
@@ -140,8 +140,7 @@ function Peso () {
                     </option>
                     ))}
                 </select>
-            </div>
-            <div className="hasta">
+
                 <label htmlFor="hasta" className="label">Hasta:</label>
                 <select className="select" value={hasta} onChange={handleSelectHasta}>
                     {options.map(option => (
@@ -153,14 +152,14 @@ function Peso () {
             </div>
 
             <div className="camposdecambio">
-                <input value={input} type="text" className="convertir" onChange={(e) => handleChangeDesde(e)} name="convertir1" id="convertir1" />
-                <button><img src={intercambio} alt="intercambio" className="intercambio" id="intercambio" /></button>
-                <input value={cambio} type="text" className="convertir" onChange={(e) => handleChangeHasta(e)} name="convertir2" id="convertir2" />
+                <input value={input} type="text" className="convertir" onChange={(e) => handleChangeDesde(e)} onFocus={(e) => {e.target.select()}} />
+                <button><img src={intercambio} alt="intercambio" className="intercambio"/></button>
+                <input value={cambio} type="text" className="convertir" onChange={(e) => handleChangeHasta(e)} onFocus={(e) => {e.target.select()}}/>
             </div>
 
-            <div className="etiquetascambio">
-                <p>{desde !=="0" ?  desde:""}</p>
-                <p>{hasta !=="0" ?  hasta:""}</p>
+            <div className="unidades">
+                <p className="unidad">{desde !=="0" ?  desde:""}</p>
+                <p className="unidad">{hasta !=="0" ?  hasta:""}</p>
             </div>
         </div>
     )

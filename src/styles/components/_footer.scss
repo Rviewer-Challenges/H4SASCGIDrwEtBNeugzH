@@ -4,6 +4,10 @@
     color: white;
 
     bottom: 0;
-    //position: absolute;
+    position: absolute;
     width: 100%;
+
+    & .title {
+        margin-top: 0%;
+    }
 }
