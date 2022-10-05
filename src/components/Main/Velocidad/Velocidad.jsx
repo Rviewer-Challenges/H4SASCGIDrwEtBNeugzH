@@ -1,150 +1,44 @@
 import React, { useState } from "react";
-
 import intercambio from '../../../assets/intercambio.png';
 
-function Velocidad () {
+const convert = require('convert-units');
 
-    const options = [
-        {value: "0", text: 'Elige una unidad'},
-        {value: "km/h", text: 'Km/h'},
-        {value: "m/s", text: 'Metros/seg'},
-        {value: "ml/h", text: 'Millas/h'}
-    ];
+function Velocidad () {
     
-    const [desde, setDesde] = useState(options[0].value);
-    const [hasta, setHasta] = useState(options[0].value);
+    const [desde, setDesde] = useState(convert().list("speed")[0].abbr);
+    const [hasta, setHasta] = useState(convert().list("speed")[1].abbr);
 
     const [input, setInput] = useState(0);
     const [cambio, setCambio] = useState(0);
 
-    const convVelocidad = (peso) => {
-        if (desde === "0" || hasta === "0") return 0 //console.log("Unidades NOK!")
-        switch (desde) {
-            case "gr":  // De gramos
-                switch (hasta) {
-                    case "gr":  // A gramos
-                        return peso
-                    case "Kg":  // A Kilos                    
-                        return peso / 1000
-                    case "T":   // A Toneladas
-                        return peso / 1000000
-                    case "Lb":  // A Libras
-                        return peso * 0.0022
-                    case "Oz":  // A Onzas
-                        return peso * 0.0353
-                    default:
-                        console.log("Unexpected error!!")
-                        break;
-                }
-                break;
-            case "Kg":  // De Kilos
-                switch (hasta) {
-                    case "gr":  // A gramos
-                        return peso * 1000
-                    case "Kg":  // A Kilos                    
-                        return peso
-                    case "T":   // A Toneladas
-                        return peso / 1000
-                    case "Lb":  // A Libras
-                        return peso * 2.2046
-                    case "Oz":  // A Onzas
-                        return peso * 35.2739
-                    default:
-                        console.log("Unexpected error!!")
-                        break;
-                }
-                break;
-            case "T":  // De Toneladas
-                switch (hasta) {
-                    case "gr":  // A gramos
-                        return peso * 1000000
-                    case "Kg":  // A Kilos                    
-                        return peso * 1000
-                    case "T":   // A Toneladas
-                        return peso
-                    case "Lb":  // A Libras
-                        return peso * 2204.62
-                    case "Oz":  // A Onzas
-                        return peso * 35273.94
-                    default:
-                        console.log("Unexpected error!!")
-                        break;
-                }
-                break;
-            case "Lb":  // De libras
-                switch (hasta) {
-                    case "gr":  // A gramos
-                        return peso * 453.59
-                    case "Kg":  // A Kilos                    
-                        return peso * 0.4536
-                    case "T":   // A Toneladas
-                        return peso * 0.000453592
-                    case "Lb":  // A Libras
-                        return peso
-                    case "Oz":  // A Onzas
-                        return peso * 16
-                    default:
-                        console.log("Unexpected error!!")
-                        break;
-                }
-                break;
-            case "Oz":  // De onzas
-                switch (hasta) {
-                    case "gr":  // A gramos
-                        return peso * 28.3495
-                    case "Kg":  // A Kilos                    
-                        return peso * 0.0283
-                    case "T":   // A Toneladas
-                        return peso * 2.8*10**-5 
-                    case "Lb":  // A Libras
-                        return peso * 0.0625
-                    case "Oz":  // A Onzas
-                        return peso
-                    default:
-                        console.log("Unexpected error!!")
-                        break;
-                }
-                break;
-            default:
-                break;
-        }
-    }
-
-    const handleSelectDesde = (e) => {
-        setDesde(e.target.value);
-    }
-    const handleSelectHasta = (e) => {
-        setHasta(e.target.value);
-    }
-
     const handleChangeDesde = (e) => {
         setInput(e.target.value)
-        setCambio(convVelocidad(e.target.value))
+        setCambio(convert(e.target.value).from(desde).to(hasta))
     }
     const handleChangeHasta = (e) => {
         setCambio(e.target.value)
-        setInput(convVelocidad(e.target.value))
+        setInput(convert(e.target.value).from(hasta).to(desde))
     }
 
     return (
         <div className="marcoPrincipal">
-            <p className="campo">Velocidad **Lanean...**</p>  
+            <p className="campo">Velocidad</p>  
             <div className="select">
                 <label htmlFor="desde" className="label">Desde:</label>
-                <select className="select" value={desde} onChange={handleSelectDesde}>
-                    {options.map(option => (
-                    <option key={option.value} value={option.value}>
-                        {option.text}
-                    </option>
+                <select className="select" value={desde} onChange={(e) => setDesde(e.target.value)}>
+                    {convert().list("speed").map((option, i) => (
+                        <option key={i} value={option.abbr}>
+                            {option.singular}
+                        </option>
                     ))}
                 </select>
 
                 <label htmlFor="hasta" className="label">Hasta:</label>
-                <select className="select" value={hasta} onChange={handleSelectHasta}>
-                    {options.map(option => (
-                    <option key={option.value} value={option.value}>
-                        {option.text}
-                    </option>
+                <select className="select" value={hasta} onChange={(e) => setHasta(e.target.value)}>
+                    {convert().list("speed").map((option, i) => (
+                        <option key={i} value={option.abbr}>
+                            {option.singular}
+                        </option>
                     ))}
                 </select> 
             </div>
@@ -156,8 +50,8 @@ function Velocidad () {
             </div>
 
             <div className="unidades">
-                <p className="unidad">{desde !=="0" ?  desde : ""}</p>
-                <p className="unidad">{hasta !=="0" ?  hasta : ""}</p>
+                <p className="unidad">{desde !=="" ?  desde : ""}</p>
+                <p className="unidad">{hasta !=="" ?  hasta : ""}</p>
             </div>
         </div>
     )

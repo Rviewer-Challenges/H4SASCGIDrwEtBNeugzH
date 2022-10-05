@@ -1,134 +1,60 @@
 import React, { useState } from "react";
-
 import intercambio from '../../../assets/intercambio.png';
 
+const convert = require('convert-units');
+
 function Temperatura () {
-
-  const options = [
-    {value: "0", text: 'Elige una unidad'},
-    {value: "C", text: 'Celsius'},
-    {value: "F", text: 'Fahrenheit'},
-    {value: "K", text: 'Kelvin'}
-  ];
-
-  const [desde, setDesde] = useState(options[0].value);
-  const [hasta, setHasta] = useState(options[0].value);
-  //const [reverse, setReverse] = useState(false);
-
-  const [input, setInput] = useState(0);
-  const [cambio, setCambio] = useState(0);
-  
-  const convTemperatura = (temperatura) => {
-    //console.log("input: " + input + " cambio: " + cambio + "\n desde: " + desde + " hasta: " + hasta);
-    if (desde === "0" || hasta === "0") return 0 //console.log("Unidades NOK!")
     
-    switch (desde) {
-      case "C": // De Celsius
-        switch (hasta) {
-          case "C": // A Celsius
-            return temperatura;
-          case "F": // A Fahrenheit
-            return (temperatura * 1.8 + 32)
-          case "K": // A Kelvin
-            return (parseFloat(temperatura) + parseFloat(273.15));
-          default:
-            break;
-        }
-        break;
-      case "F": // De Fahrenheit
-        switch (hasta) {
-          case "C": // A Celsius
-            return ((temperatura - 32) / 1.8);
-          case "F": // A Fahrenheit
-            return temperatura;
-          case "K": // A Kelvin
-            return (temperatura - 32) / 1.8 + 273.15
-          default:
-            break;
-        }
-        break;
-      case "K": // De Kelvin
-        switch (hasta) {
-          case "C": // A Celsius
-            return (parseFloat(temperatura) - parseFloat(273.15));
-          case "F": // A Fahrenheit
-            return 1.8 * (temperatura - 273.15) + 32
-          case "K": // A Kelvin
-            return temperatura;
-          default:
-            break;
-        }
-        break;
-      default:
-        break;
+    const [desde, setDesde] = useState(convert().list("temperature")[0].abbr);
+    const [hasta, setHasta] = useState(convert().list("temperature")[1].abbr);
+
+    const [input, setInput] = useState(0);
+    const [cambio, setCambio] = useState(0);
+
+    const handleChangeDesde = (e) => {
+        setInput(e.target.value)
+        setCambio((convert(e.target.value).from(desde).to(hasta)).toFixed(3))
     }
-  }
+    const handleChangeHasta = (e) => {
+        setCambio(e.target.value)
+        setInput((convert(e.target.value).from(hasta).to(desde)).toFixed(3))
+    }
 
-  const handleSelectDesde = (e) => {
-    setDesde(e.target.value);
-    setInput(0);
-    setCambio(0); 
-  }
-  const handleSelectHasta = (e) => {
-    setHasta(e.target.value);
-    setInput(0);
-    setCambio(0);
-  }
+    return (
+        <div className="marcoPrincipal">
+            <p className="campo">Temperatura</p>  
+            <div className="select">
+                <label htmlFor="desde" className="label">Desde:</label>
+                <select className="select" value={desde} onChange={(e) => setDesde(e.target.value)}>
+                    {convert().list("temperature").map((option, i) => (
+                        <option key={i} value={option.abbr}>
+                            {option.singular}
+                        </option>
+                    ))}
+                </select>
 
-  const handleChangeDesde = (e) => {
-    setInput(e.target.value)
-    setCambio(convTemperatura(e.target.value))
-  }
-  const handleChangeHasta = (e) => {
-    setCambio(e.target.value)
-    setInput(convTemperatura(e.target.value))
-  }
+                <label htmlFor="hasta" className="label">Hasta:</label>
+                <select className="select" value={hasta} onChange={(e) => setHasta(e.target.value)}>
+                    {convert().list("temperature").map((option, i) => (
+                        <option key={i} value={option.abbr}>
+                            {option.singular}
+                        </option>
+                    ))}
+                </select> 
+            </div>
 
-  const handleReverse = () => {
-    setDesde(hasta)
-    setHasta(desde)
+            <div className="camposdecambio">
+                <input value={input} type="text" className="convertir" onChange={(e) => handleChangeDesde(e)} onFocus={(e) => {e.target.select()}} />
+                <button><img src={intercambio} alt="intercambio" className="intercambio"/></button>
+                <input value={cambio} type="text" className="convertir" onChange={(e) => handleChangeHasta(e)} onFocus={(e) => {e.target.select()}}/>
+            </div>
 
-    console.log(input)
-    setCambio(convTemperatura(input))
-  }
-
-  return (
-    <div className="marcoPrincipal">
-      <p className="campo">Temperatura</p> 
-      <div className="select">
-        <label htmlFor="desde" className="label">Desde:</label>
-        <select className="select" value={desde} onChange={handleSelectDesde}>
-            {options.map(option => (
-            <option key={option.value} value={option.value}>
-                {option.text}
-            </option>
-            ))}
-        </select>
-
-        <button onClick={handleReverse}><img src={intercambio} alt="intercambio" className="intercambio"/></button>
-
-        <label htmlFor="hasta" className="label">Hasta:</label>
-        <select className="select" value={hasta} onChange={handleSelectHasta}>
-            {options.map(option => (
-            <option key={option.value} value={option.value}>
-                {option.text}
-            </option>
-            ))}
-        </select> 
-      </div>
-    
-      <div className="camposdecambio">
-          <input value={input} type="number" className="convertir" onChange={(e) => handleChangeDesde(e)}  onFocus={ (e) => {e.target.select()}}  />
-          <input value={cambio} type="number" className="convertir" onChange={(e) => handleChangeHasta(e)} onFocus={(e) => {e.target.select()}}/>
-      </div>
-
-      <div className="unidades">
-          <p className="unidad">{desde !=="0" ?  desde : ""}</p>
-          <p className="unidad">{hasta !=="0" ?  hasta : ""}</p>
-      </div>
-    </div>
-  )
-  
+            <div className="unidades">
+                <p className="unidad">{desde !=="" ?  desde : ""}</p>
+                <p className="unidad">{hasta !=="" ?  hasta : ""}</p>
+            </div>
+        </div>
+    )
 }
 
 export default Temperatura;
