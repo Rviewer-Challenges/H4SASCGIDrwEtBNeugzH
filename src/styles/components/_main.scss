@@ -60,10 +60,13 @@
 };
 
 .marcoPrincipal {
-//    max-width: 90%;
     display: inline-block;
     background-color: pink;
-    height: 89vh;
+    border-style: dotted;
+    max-width: 85%;
+    margin-top: 5em;
+
+    
     
     //background-color: $color-global-white;
     & .campo {
@@ -100,6 +103,7 @@
     display: inline-block;
 
     padding: 0.5em;
+    margin: 2em;
     & .convertir {
         width: 40%;
         text-align: center;

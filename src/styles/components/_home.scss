@@ -1,53 +1,42 @@
-/* .App {
-    margin: 0%;
-    padding: 0%;
-}
- */
 .home {
     background-color: $color-global-white;
     height: 100%;
     /*     margin: 0%;
     padding: 0%; */
-
-
-    & img {
-        max-width: 20%;
-        height: auto;
-        //background-color: white;
-        
-        
+    & .selecciona {
+        margin: 0;
+        padding: 3em;
     };
-};
-.selecciona {
-    margin: 0;
-    padding: 3em;
-}
-.iconos {
-    //display: flex;
-    border-style: double;
-    border-radius: 2em;
-    border-width: 1em;
-    border-color: black;
-    background-color: aqua;
-    //border: 5em;
-    margin: 1em;
-    
-    
-}
-.campos {
-    background-color: black;
-    border-style: double;
-}
-/* img {
-    max-width: 20%;
-    height: auto;
-    background-color: white;
-}; */
+    & .iconos {
+        //display: flex;
+        border-style: double;
+        border-radius: 2em;
+        border-width: 1em;
+        border-color: black;
+        background-color: aqua;
+        //border: 5em;
+        margin: 1em;
+        
+        & .boton {
+            max-width: 25%;
+            height: auto;
+            //background-color: $color-secondary;
+            margin: 2em;
+            padding-top: 200;
+            //margin-top: 3em; 
+        };
 
-.boton {
-    max-width: 25%;
-    height: auto;
-    //background-color: $color-secondary;
-    margin: 2em;
-    
-}
+        & img {
+            max-width: 20%;
+            height: auto;
+            padding: 1em;
+            //background-color: white;
+        };
+    }
+};
+
+
+.campos {   // NPI ??
+    background-color: black;
+    border-style: dotted;
+};

@@ -13,22 +13,21 @@ function Temperatura () {
 
   const [desde, setDesde] = useState(options[0].value);
   const [hasta, setHasta] = useState(options[0].value);
+  //const [reverse, setReverse] = useState(false);
 
   const [input, setInput] = useState(0);
   const [cambio, setCambio] = useState(0);
   
-
   const convTemperatura = (temperatura) => {
-    console.log(temperatura)
-    console.log("input: " + input + " cambio: " + cambio + "\n desde: " + desde + " hasta: " + hasta);
+    //console.log("input: " + input + " cambio: " + cambio + "\n desde: " + desde + " hasta: " + hasta);
     if (desde === "0" || hasta === "0") return 0 //console.log("Unidades NOK!")
+    
     switch (desde) {
       case "C": // De Celsius
         switch (hasta) {
           case "C": // A Celsius
             return temperatura;
           case "F": // A Fahrenheit
-            console.log(temperatura * 1.8 +32)
             return (temperatura * 1.8 + 32)
           case "K": // A Kelvin
             return (parseFloat(temperatura) + parseFloat(273.15));
@@ -69,7 +68,6 @@ function Temperatura () {
     setDesde(e.target.value);
     setInput(0);
     setCambio(0); 
-
   }
   const handleSelectHasta = (e) => {
     setHasta(e.target.value);
@@ -86,6 +84,14 @@ function Temperatura () {
     setInput(convTemperatura(e.target.value))
   }
 
+  const handleReverse = () => {
+    setDesde(hasta)
+    setHasta(desde)
+
+    console.log(input)
+    setCambio(convTemperatura(input))
+  }
+
   return (
     <div className="marcoPrincipal">
       <p className="campo">Temperatura</p> 
@@ -99,6 +105,8 @@ function Temperatura () {
             ))}
         </select>
 
+        <button onClick={handleReverse}><img src={intercambio} alt="intercambio" className="intercambio"/></button>
+
         <label htmlFor="hasta" className="label">Hasta:</label>
         <select className="select" value={hasta} onChange={handleSelectHasta}>
             {options.map(option => (
@@ -110,9 +118,8 @@ function Temperatura () {
       </div>
     
       <div className="camposdecambio">
-          <input value={input} type="text" className="convertir" onChange={(e) => handleChangeDesde(e)} onFocus={(e) => {e.target.select()}} />
-          <button><img src={intercambio} alt="intercambio" className="intercambio"/></button>
-          <input value={cambio} type="text" className="convertir" onChange={(e) => handleChangeHasta(e)} onFocus={(e) => {e.target.select()}}/>
+          <input value={input} type="number" className="convertir" onChange={(e) => handleChangeDesde(e)}  onFocus={ (e) => {e.target.select()}}  />
+          <input value={cambio} type="number" className="convertir" onChange={(e) => handleChangeHasta(e)} onFocus={(e) => {e.target.select()}}/>
       </div>
 
       <div className="unidades">
