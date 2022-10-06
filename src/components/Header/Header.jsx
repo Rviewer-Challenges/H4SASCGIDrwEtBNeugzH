@@ -9,7 +9,7 @@ function Header () {
       <p className="title">
         <b>Unit Converter</b> 
       </p>
-      <Nav/>
+      {/* <Nav/> */}
     </header>
   ) 
      
