@@ -1,28 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
+import Units from './Units/Units.jsx';
 
-import { Link } from "react-router-dom";
-
-import temperatura from '../../../assets/termometro.png';
-import exchange from '../../../assets/exchange2.png';
-import peso from '../../../assets/peso.png';
-import velocidad from '../../../assets/velocidad.png';
-import distancia from '../../../assets/distancia.png';
-import volumen from '../../../assets/volumen.png';
+const convert = require('convert-units');
 
 function Home () {
+
+  const [campo, setCampo] = useState(convert().measures()[0]);
+
   return (
     <div className="home">
-      <p className="selecciona">SELECCIONA EL CAMPO A CONVERTIR</p>
-      <div className="iconos">
-        <Link to='/Temperatura' className="boton"><img src={temperatura} alt="temperatura"/></Link>
-        <Link to='/Exchange' className="boton"><img src={exchange} alt="exchange"/></Link>
-        <Link to='/Peso' className="boton"><img src={peso} alt="peso"/></Link>
-        <Link to='/Velocidad' className="boton"><img src={velocidad} alt="velocidad"/></Link>
-        <Link to='/Distancia' className="boton"><img src={distancia} alt="distancia"/></Link>
-        <Link to='/Volumen' className="boton"><img src={volumen} alt="volumen"/></Link>
-      </div>
+      <p className="selecciona"><b>SELECCIONA EL CAMPO A CONVERTIR</b></p>
+
+        <select className="select" value={campo} onChange={(e) => setCampo(e.target.value)}>
+            {convert().measures().map((option, i) => (
+                <option key={i} value={option}>
+                  {option}
+                </option>
+            ))}
+        </select> 
+
+      {campo ? <Units value={campo}/> : null} 
     </div>
   )
 }
-
 export default Home;

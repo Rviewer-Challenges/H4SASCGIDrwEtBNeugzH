@@ -1,57 +1,3 @@
-/* /* .App {
-    margin: 0%;
-    padding: 0%;
-}
- */
-/* .main {
-    background-color: $color-global-white;
-    height: 100%; */
-/*     margin: 0%;
-    padding: 0%; */
-
-
-   /*  & img {
-        max-width: 20%;
-        height: auto; */
-        //background-color: white;
-        
- /*        
-    };
-};
-.selecciona {
-    margin: 0;
-    padding: 3em;
-}
-.iconos {
-    //display: flex;
-    border-style: double;
-    border-radius: 2em;
-    border-width: 1em;
-    border-color: black;
-    background-color: aqua;
-    //border: 5em;
-    margin: 1em;
-    
-    
-}
-.campos {
-    background-color: pink;
-    border-style: double;
-} */
-/* img {
-    max-width: 20%;
-    height: auto;
-    background-color: white;
-}; 
-
-.boton {
-    max-width: 25%;
-    height: auto;
-    background-color: $color-secondary;
-    margin: 2em;
-    
-} */
-
 *{
     box-sizing: border-box;
 }
@@ -61,10 +7,10 @@
 
 .marcoPrincipal {
     display: inline-block;
-    background-color: pink;
-    border-style: dotted;
+    background-color: $color-global-white;
+    //border-style: dotted;
     max-width: 85%;
-    margin-top: 5em;
+    margin-top: 2.5em;
 
     
     
@@ -87,8 +33,8 @@
     };
 }
 .select {
-    background-color: red;
-    border-style: double;
+    background-color:$color-global-white;
+    //border-style: double;
 
     max-width: 90%;
     display: inline-block;
@@ -96,8 +42,8 @@
     padding: 0.5em;
 };
 .camposdecambio {
-    background-color: green;
-    border-style: double;
+    background-color: $color-global-white;
+//    border-style: double;
 
     max-width: 90%;
     display: inline-block;
@@ -118,6 +64,8 @@
     display: inline-block;
 
     padding: 0.5em;
+    //padding-bottom: 2em;
+    margin-bottom: 2em;
 
     & .unidad {
         //display: none;
