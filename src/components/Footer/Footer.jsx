@@ -4,7 +4,6 @@ function Footer () {
   
   return (
     <footer className="footer">
-      Unit converter
       <a
         className="App-link"
         href="https://github.com/Rviewer-Challenges/H4SASCGIDrwEtBNeugzH"
@@ -15,7 +14,6 @@ function Footer () {
       </a>
     </footer>
   )
-  
 }
 
 export default Footer;

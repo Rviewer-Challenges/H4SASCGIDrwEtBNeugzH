@@ -1,8 +1,7 @@
 .home {
     background-color:$color-primary-faded;
     height: 100%;
-    /*     margin: 0%;
-    padding: 0%; */
+    padding-top: 5em;
     & .selecciona {
         margin: 0;
         padding: 1em;
@@ -10,35 +9,24 @@
         font-size: large
     };
     & .iconos {
-        //display: flex;
         border-style: double;
         border-radius: 2em;
         border-width: 1em;
         border-color: black;
         background-color: aqua;
-        //border: 5em;
         margin: 1em;
         
         & .boton {
             max-width: 25%;
             height: auto;
-            //background-color: $color-secondary;
             margin: 2em;
             padding-top: 200;
-            //margin-top: 3em; 
         };
 
         & img {
             max-width: 20%;
             height: auto;
             padding: 1em;
-            //background-color: white;
         };
     }
-};
-
-
-.campos {   // NPI ??
-    background-color: black;
-    border-style: dotted;
 };
