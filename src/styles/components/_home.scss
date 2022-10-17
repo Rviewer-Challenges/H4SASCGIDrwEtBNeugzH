@@ -1,53 +1,32 @@
-/* .App {
-    margin: 0%;
-    padding: 0%;
-}
- */
- .home {
-    background-color: $color-global-white;
+.home {
+    background-color:$color-primary-faded;
     height: 100%;
-/*     margin: 0%;
-    padding: 0%; */
-
-
-    & img {
-        max-width: 20%;
-        height: auto;
-        //background-color: white;
-        
-        
+    padding-top: 5em;
+    & .selecciona {
+        margin: 0;
+        padding: 1em;
+        color: white;
+        font-size: large
     };
-};
-.selecciona {
-    margin: 0;
-    padding: 3em;
-}
-.iconos {
-    //display: flex;
-    border-style: double;
-    border-radius: 2em;
-    border-width: 1em;
-    border-color: black;
-    background-color: aqua;
-    //border: 5em;
-    margin: 1em;
-    
-    
-}
-.campos {
-    background-color: pink;
-    border-style: double;
-}
-/* img {
-    max-width: 20%;
-    height: auto;
-    background-color: white;
-}; */
+    & .iconos {
+        border-style: double;
+        border-radius: 2em;
+        border-width: 1em;
+        border-color: black;
+        background-color: aqua;
+        margin: 1em;
+        
+        & .boton {
+            max-width: 25%;
+            height: auto;
+            margin: 2em;
+            padding-top: 200;
+        };
 
-.boton {
-    max-width: 25%;
-    height: auto;
-    //background-color: $color-secondary;
-    margin: 2em;
-    
-}
+        & img {
+            max-width: 20%;
+            height: auto;
+            padding: 1em;
+        };
+    }
+};

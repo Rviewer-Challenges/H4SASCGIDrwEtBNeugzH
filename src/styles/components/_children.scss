@@ -1,0 +1,47 @@
+.marcoPrincipal {
+    display: inline-block;
+    background-color: $color-global-white;
+    max-width: 85%;
+    margin-top: 2.5em;
+
+    & .campo {
+        margin: 0;
+        padding: 1em;  
+    }
+    & .unidad {
+        margin: 0%;
+        padding: 0%;
+    };
+
+    & .select {
+        background-color:$color-global-white;
+        max-width: 90%;
+        display: inline-block;
+        padding: 0.5em;
+    };
+    & .camposdecambio {
+        background-color: $color-global-white;
+        max-width: 90%;
+        display: inline-block;
+        padding: 0.5em;
+        margin: 2em;
+        & .convertir {
+            width: 40%;
+            text-align: center;
+            font-size: xx-large;
+        }
+    };
+    & .unidades {
+        background-color: blue;
+        border-style: double;
+        width: 90%;
+        display: inline-block;
+        padding: 0.5em;
+        margin-bottom: 2em;
+        & .unidad {
+            font-size: xx-large;
+            width: 90%;
+            color: white;
+        }
+    }
+}

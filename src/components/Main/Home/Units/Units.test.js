@@ -1,10 +1,10 @@
 import React from "react";
 import { shallow } from "enzyme";
-import Peso from "./Peso";
+import Units from "./Units";
 
-describe("Peso", () => {
+describe("Units", () => {
   test("matches snapshot", () => {
-    const wrapper = shallow(<Peso />);
+    const wrapper = shallow(<Units />);
     expect(wrapper).toMatchSnapshot();
   });
 });
